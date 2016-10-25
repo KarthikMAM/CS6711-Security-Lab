@@ -25,7 +25,7 @@ public class Ex05_RSA {
 		// also x.compareTo(1) == 1 means if x is greater than one see strcmp's return
 		this.e = BigInteger.probablePrime(bitLength / 2, rnd);
 		while( e.gcd(phi).compareTo(BigInteger.ONE) == 1 && e.compareTo(phi) < 1 ) {
-			e.add(BigInteger.ONE);
+			e = e.add(BigInteger.ONE);
 		}
 		this.d = e.modInverse(phi);
 
